@@ -1,0 +1,38 @@
+
+bands = {
+  joy_division: %w[ian bernard peter stephen],
+  the_smiths: %w[johnny andy morrissey mike],
+  the_cramps: %w[lux ivy nick],
+  blondie: %w[debbie chris clem jimmy nigel],
+  talking_heads: %w[david tina chris jerry]
+}
+
+#Use .each to cycle through and print each band 
+#bands.each{|n| p n}
+#But this turns the hash into an array and does not separate the key and value - it just prints both
+#to manipulate just the value or just the key, we need to use reduce
+#This prints arrays containing the band members without the key
+
+bands.reduce({}) do |memo, (key, value)| 
+  memo = value
+  p memo
+  memo
+end
+
+#return another hash of arrays, but each array now contains the band members sorted alphabetically 
+
+bands.reduce({}) do |memo, (key, value)|
+  memo[key] = value.sort
+  p memo
+  memo
+end
+
+#return only the band member's name which comes earliest in the alphabet
+#first set memo to "z", then compare to the first item of each alphabetically sorted array. Then, reassign if that band member comes earlier in the alphabet.
+bands.reduce("z") do |memo, (key, value)|
+  if memo >= value.sort[0]
+    memo = value.sort[0]
+  end
+#  p memo
+  memo
+end

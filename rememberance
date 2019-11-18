@@ -1,0 +1,1 @@
+#variables that automatically store all the instances of a class. Every time you create a new instance, the variable updates

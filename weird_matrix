@@ -1,0 +1,16 @@
+spice_rack = [ ["Mace", "Ginger", "Marjoram"], ["Paprika", "Saffron", "Coriander"], ["Parsley", "Sage", "Rosemary"]]
+# get "paprika"
+p spice_rack[1][0]
+# change safforn to sassafras
+spice_rack[1][1] = "Sassafras"
+p spice_rack[1][1]
+#add element to inner array
+spice_rack[2] << "Clove"
+p spice_rack
+# try to insert something into a column that doesn't exist
+spice_rack[1][100] = "Chili Powder"
+p spice_rack
+# it expands the array and fills in all blank columns (columns 3 - 99) with nil
+#replace an array
+spice_rack[1] = ["Ginger", "Posh", "Scary", "Sporty", "Baby"]
+p spice_rack

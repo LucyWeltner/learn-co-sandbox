@@ -1,0 +1,6 @@
+run_code_inside = false
+puts "Code Before If...End"
+if run_code_inside
+puts "Code inside"
+end
+puts "Code after if...end"
